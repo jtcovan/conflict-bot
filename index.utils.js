@@ -39,11 +39,11 @@ function formatLineNumbers(numbers) {
 }
 
 function debug(...args) {
-  const debug = core.getInput("debug", { required: false });
-  const enableLogging = ["true", "yes", "on"].includes(debug.toLowerCase());
-  if (enableLogging) {
+ //  const debug = core.getInput("debug", { required: false });
+ //  const enableLogging = ["true", "yes", "on"].includes(debug.toLowerCase());
+ //  if (enableLogging) {
     console.log(...args);
-  }
+ // }
 }
 
 module.exports = {

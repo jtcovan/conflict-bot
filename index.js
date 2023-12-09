@@ -131,7 +131,7 @@ async function getOpenPullRequests() {
       });
 
       if (pullRequests.length > 0) {
-        allPullRequests.push(pullRequests);
+        allPullRequests.push(...pullRequests);
         page++;
       } else {
         break
@@ -373,7 +373,7 @@ async function createConflictComment(conflictArray) {
           });
 
           if (files.length > 0) {
-            allFiles.push(files);
+            allFiles.push(...files);
             page++;
           } else {
             break

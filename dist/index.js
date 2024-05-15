@@ -10240,6 +10240,8 @@ async function setup() {
     execSync(`git config user.email "action@github.com"`);
     execSync(`git config user.name "GitHub Action"`);
 
+    debug(`Fetching branch: ${mainBranch}`);
+
     execSync(`git fetch origin ${mainBranch}:${mainBranch}`);
 
     // Fetch PR branches into temporary refs.
@@ -10338,6 +10340,8 @@ async function attemptMerge(otherPullRequest) {
       `Attempting to merge #${otherPullRequest.branch} into #${pullRequestBranch}`
     );
 
+    debug(`Fetching branch: ${otherPullRequest.branch}`);
+    
     if (otherPullRequest.isFork) {
       // This is in another try catch because we may have already added this remote.
       try {

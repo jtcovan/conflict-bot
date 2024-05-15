@@ -84,7 +84,7 @@ async function getOpenPullRequests() {
         title: pr.title,
         reviewers: await getAllReviewers(pr.number),
         isFork: pr.head.repo.fork,
-        pullRequestHeadUrl: pullRequest.head.repo.clone_url,
+        pullRequestHeadUrl: pr.head.repo.clone_url,
       })
     }
 

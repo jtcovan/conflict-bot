@@ -10244,6 +10244,8 @@ async function setup() {
 
     execSync(`git fetch origin ${mainBranch}:${mainBranch}`);
 
+    debug(`Fetching branch: ${pullRequestBranch}`);
+
     // Fetch PR branches into temporary refs.
     if (variables.get("isFork")) {
       execSync(
@@ -10341,7 +10343,7 @@ async function attemptMerge(otherPullRequest) {
     );
 
     debug(`Fetching branch: ${otherPullRequest.branch}`);
-    
+
     if (otherPullRequest.isFork) {
       // This is in another try catch because we may have already added this remote.
       try {
